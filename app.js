@@ -1,4 +1,4 @@
-import * as THREE from "https://unpkg.com/three@0.136.0/build/three.module.js";
+import * as THREE from "./modules/three.module.js";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -8,8 +8,9 @@ const camera = new THREE.PerspectiveCamera(
     1000
 )
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(innerWidth, innerHeight)
+const renderer = new THREE.WebGLRenderer({antialias: true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(devicePixelRatio);
 document.body.appendChild(renderer.domElement)
 
 const box = new THREE.BoxGeometry(1, 1, 1);

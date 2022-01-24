@@ -10,7 +10,7 @@ const
 export const
     scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far),
-    material = new THREE.MeshNormalMaterial( {color: 0x00ffff, flatShading:true} ),
+    material = new THREE.MeshNormalMaterial( { flatShading:true} ),
     renderer = new THREE.WebGLRenderer({antialias: true});
 
 
@@ -22,12 +22,4 @@ function setScene(){
     renderer.setPixelRatio(devicePixelRatio);
     document.body.appendChild(renderer.domElement);
 }
-
-const _onWindowResize = function() {
-    camera.aspect = window.innerWidth / window.innerHeight
-    camera.updateProjectionMatrix()
-    renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-window.addEventListener('resize', _onWindowResize, false);
 

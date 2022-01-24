@@ -31,31 +31,72 @@ body {
     margin: 0 auto;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.4) !important;
+    background-color: rgba(255, 255, 255, 0.50) !important;
 }
 
 .info #intro{
-    bottom: 80%;
+    top: 10%;
     position: absolute;
     text-align: center;
-    font-size: 200%;
+    font-size: 250%;
 }
 
 .info #message{
+    visibility: hidden;
     position: absolute;
     text-align: center;
-    width: 60%;
+    width: 40%;
     left: 50%;
-    bottom: 13%;
+    top: 60%;
+    font-size: 115%;
     transform: translate(-50%, -10%);
 }
 
 .info #avatar {
     position: absolute;
     left: 50%;
-    bottom: 45%;
+    top: 25%;
     transform: translate(-50%, 0);
     object-fit:scale-down;
     width:30%;
     height:30%;
+}
+
+
+.info #socialMediaLinks{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, 0);
+}
+
+.fa {
+    font-size: 33px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+.fa-github {
+    background: #9941bb;
+    color: white;
+}
+
+.fa-twitter {
+    background: #aa51cc;
+    color: white;
+}
+
+.fa-linkedin{
+    background: #aa51cc;
+    color: white;
 }

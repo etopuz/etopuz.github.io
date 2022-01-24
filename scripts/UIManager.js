@@ -23,7 +23,7 @@ function setMessageWidth(){
         message.style.width = "90%";
     }
     else{
-        message.style.width: '40%';  
+        message.style.width =  '40%';
     }
 }
 

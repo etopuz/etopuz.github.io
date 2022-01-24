@@ -35,7 +35,7 @@ body {
 }
 
 .info #intro{
-    top: 10%;
+    top: 6%;
     position: absolute;
     text-align: center;
     font-size: 250%;
@@ -47,8 +47,8 @@ body {
     text-align: center;
     width: 40%;
     left: 50%;
-    top: 60%;
-    font-size: 115%;
+    top: 58%;
+    font-size: 18px;
     transform: translate(-50%, -10%);
 }
 
@@ -58,8 +58,8 @@ body {
     top: 25%;
     transform: translate(-50%, 0);
     object-fit:scale-down;
-    width:30%;
-    height:30%;
+    width:25%;
+    height:25%;
 }
 
 

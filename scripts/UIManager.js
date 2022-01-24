@@ -5,8 +5,7 @@ let body = document.body,
     info = document.getElementById("info"),
     message = document.getElementById("message");
 
-adjustMessageContent();
-message.style.visibility = 'visible';
+giveErrorIfLandscape();
 
 window.addEventListener('resize', function(){
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -16,38 +15,23 @@ window.addEventListener('resize', function(){
     info.style.height = '100%';
     adjustMessageContent();
     console.log(getPixelRatio());
+    console.log(isMobile());
+
 }, false);
 
+adjustMessageContent();
+message.style.visibility = 'visible';
 
 function adjustMessageContent(){
 
-    if (getPixelRatio() < 0.5){
-        message.style.fontSize = '100%';
-        message.style.width = "95%";
-    }
-
-    else if(getPixelRatio() < 1.0){
-        message.style.fontSize = '115%';
-        message.style.width = "90%";
-    }
-
-    else if(getPixelRatio() < 1.2){
-        message.style.fontSize = '120%';
-        message.style.width =  '75%';
-    }
-
-    else if (getWidth() > 1024){
-        message.style.fontSize = '130%';
-        message.style.width =  '55%';
+    if(getPixelRatio() < 0.9){
+        message.style.width =  '95%';
     }
 
     else{
-        message.style.fontSize = '120%';
-        message.style.width =  '80%';
+        message.style.width =  '65%';
     }
-
 }
-
 
 function getPixelRatio(){
     return getWidth() / getHeight();
@@ -63,3 +47,24 @@ function getWidth(){
         html.clientWidth, html.scrollWidth, html.offsetWidth);
 }
 
+window.addEventListener("orientationchange", function() {
+    // Announce the new orientation number
+    giveErrorIfLandscape();
+}, false);
+
+
+function giveErrorIfLandscape(){
+    if(screen.orientation.type === "landscape-primary" && isMobile()){
+        alert('Please use portrait orientation!');
+    }
+}
+
+function isMobile(){
+    return !!(navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i));
+}

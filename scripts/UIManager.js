@@ -50,6 +50,11 @@ function getWidth(){
 window.addEventListener("orientationchange", function() {
     // Announce the new orientation number
     giveErrorIfLandscape();
+
+    info.style.width = '100%';
+    info.style.height = '100%';
+    adjustMessageContent();
+
 }, false);
 
 

@@ -5,7 +5,7 @@ let body = document.body,
     info = document.getElementById("info"),
     message = document.getElementById("message");
 
-giveErrorIfLandscape();
+adjustOrientation();
 
 window.addEventListener('resize', function(){
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -49,18 +49,20 @@ function getWidth(){
 
 window.addEventListener("orientationchange", function() {
     // Announce the new orientation number
-    giveErrorIfLandscape();
-
-    info.style.width = '100%';
-    info.style.height = '100%';
+    adjustOrientation();
     adjustMessageContent();
 
 }, false);
 
 
-function giveErrorIfLandscape(){
+function adjustOrientation(){
     if(screen.orientation.type === "landscape-primary" && isMobile()){
         alert('Please use portrait orientation!');
+    }
+
+    else{
+        info.style.width = '100%';
+        info.style.height = '100%';
     }
 }
 
